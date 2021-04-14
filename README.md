@@ -1,6 +1,9 @@
-# React Custom Starter Pack
+# React Credit Card Input form & validation
 
+- React
 - TailwindCSS
+- CreditCards,
+- CreditCards Types
 
 ## Available Scripts
 
