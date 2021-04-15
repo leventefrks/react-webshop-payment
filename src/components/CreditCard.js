@@ -11,26 +11,26 @@ const CreditCard = () => {
   const onChangeCardNumber = e => {
     const creditCard = card.parse(e.target.value);
     setCardNumber(card.format(creditCard));
-
     setPlaceholder(() => setCardMask(creditCard));
   };
 
   const setCardMask = creditCard => {
     const mask = 'XXXXXXXXXXXXXXXX';
     const currentMask = [...mask]
-      .map((maskItem, index) => {
-        if (!creditCard[index]) {
-          return (maskItem = 'X');
-        } else {
-          return (maskItem = creditCard[index]);
-        }
-      })
+      .map((maskItem, index) =>
+        !creditCard[index] ? (maskItem = 'X') : (maskItem = creditCard[index])
+      )
       .join('');
 
     return createChunks(currentMask);
   };
 
-  const createChunks = string => string.match(/.{1,4}/g);
+  const createChunks = string => {
+    const chunks = string.match(/.{1,4}/g);
+    return chunks.reduce((acc, val, index, arr) => {
+      return acc.concat(`${val} `);
+    }, '');
+  };
 
   const onSubmit = e => {
     e.preventDefault();
@@ -79,9 +79,8 @@ const CreditCard = () => {
             type="text"
             name="card-number"
             id="card-number"
-            maxLength="19"
+            maxLength="16"
             autoComplete="off"
-            value={cardNumber}
             className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
             onChange={onChangeCardNumber}
           />
