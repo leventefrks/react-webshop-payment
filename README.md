@@ -1,8 +1,8 @@
-# React Credit Card Input form & validation
+# React Credit Card Form Component
 
 - React
 - TailwindCSS
-- CreditCards,
+- CreditCards
 - CreditCards Types
 
 ## Available Scripts
