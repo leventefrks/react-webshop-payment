@@ -4,17 +4,33 @@ import { card } from 'creditcards';
 const CreditCard = () => {
   const [name, setName] = useState('');
   const [cardNumber, setCardNumber] = useState('');
+  const [placeholder, setPlaceholder] = useState('XXXX XXXX XXXX XXXX');
 
-  const onChangeName = e => {
-    const currentName = e.target.value;
-    setName(e.target.value);
-  };
+  const onChangeName = e => setName(e.target.value);
 
   const onChangeCardNumber = e => {
-    const parsedNumber = card.parse(e.target.value);
-    const formattedNumber = card.format(parsedNumber, ['  ']);
-    setCardNumber(formattedNumber);
+    const creditCard = card.parse(e.target.value);
+    setCardNumber(card.format(creditCard));
+
+    setPlaceholder(() => setCardMask(creditCard));
   };
+
+  const setCardMask = creditCard => {
+    const mask = 'XXXXXXXXXXXXXXXX';
+    const currentMask = [...mask]
+      .map((maskItem, index) => {
+        if (!creditCard[index]) {
+          return (maskItem = 'X');
+        } else {
+          return (maskItem = creditCard[index]);
+        }
+      })
+      .join('');
+
+    return createChunks(currentMask);
+  };
+
+  const createChunks = string => string.match(/.{1,4}/g);
 
   const onSubmit = e => {
     e.preventDefault();
@@ -22,10 +38,17 @@ const CreditCard = () => {
   };
 
   return (
-    <div className="w-full bg-white rounded-md shadow-md">
-      <div className="flex flex-col w-96 h-48 -mt-24 mx-auto px-6 py-4 rounded-md bg-blue-600 shadow-2xl space-y-6 text-white">
-        <div className="text-3xl self-center">{cardNumber}</div>
-        <div className="text-sm">{name}</div>
+    <div className="w-full bg-white rounded-md shadow-xl">
+      <div className="flex flex-col w-96 -mt-24 mx-auto px-6 py-4 rounded-xl bg-blue-600 shadow-2xl space-y-6 text-white relative">
+        <div className="self-center p-4 font-mono text-xl">{placeholder}</div>
+        <div>
+          <label htmlFor="name" className="text-sm text-white capitalize">
+            card holder
+          </label>
+          <div className="text-md uppercase font-bold tracking-wide">
+            {name}
+          </div>
+        </div>
       </div>
       <form className="w-full bg-white p-8 space-y-6" onSubmit={onSubmit}>
         <div>
@@ -40,8 +63,9 @@ const CreditCard = () => {
             name="name"
             id="name"
             maxLength="30"
-            onChange={onChangeName}
+            autoComplete="off"
             className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            onChange={onChangeName}
           />
         </div>
         <div>
@@ -55,9 +79,11 @@ const CreditCard = () => {
             type="text"
             name="card-number"
             id="card-number"
-            maxLength="16"
-            onChange={onChangeCardNumber}
+            maxLength="19"
+            autoComplete="off"
+            value={cardNumber}
             className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            onChange={onChangeCardNumber}
           />
         </div>
         <button
