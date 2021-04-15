@@ -21,15 +21,15 @@ const CreditCard = () => {
         !creditCard[index] ? (maskItem = 'X') : (maskItem = creditCard[index])
       )
       .join('');
-
     return createChunks(currentMask);
   };
 
-  const createChunks = string => {
-    const chunks = string.match(/.{1,4}/g);
-    return chunks.reduce((acc, val, index, arr) => {
-      return acc.concat(`${val} `);
+  const createChunks = str => {
+    const chunks = str.match(/.{1,4}/g);
+    const totalChunks = chunks.reduce((acc, item) => {
+      return acc.concat(`${item} `);
     }, '');
+    return totalChunks.slice(0, totalChunks.length - 1);
   };
 
   const onSubmit = e => {
@@ -39,7 +39,7 @@ const CreditCard = () => {
 
   return (
     <div className="w-full bg-white rounded-md shadow-xl">
-      <div className="flex flex-col w-96 -mt-24 mx-auto px-6 py-4 rounded-xl bg-blue-600 shadow-2xl space-y-6 text-white relative">
+      <div className="flex flex-col w-96 h-52 -mt-24 mx-auto px-6 py-4 rounded-xl bg-blue-600 shadow-2xl space-y-6 text-white relative">
         <div className="self-center p-4 font-mono text-xl">{placeholder}</div>
         <div>
           <label htmlFor="name" className="text-sm text-white capitalize">
