@@ -38,19 +38,54 @@ const CreditCard = () => {
   };
 
   return (
-    <div className="w-full bg-white rounded-md shadow-xl">
-      <div className="flex flex-col w-96 h-52 -mt-24 mx-auto px-6 py-4 rounded-xl bg-blue-600 shadow-2xl space-y-6 text-white relative">
-        <div className="self-center p-4 font-mono text-xl">{placeholder}</div>
-        <div>
-          <label htmlFor="name" className="text-sm text-white capitalize">
-            card holder
-          </label>
-          <div className="text-md uppercase font-bold tracking-wide">
-            {name}
+    <div className="w-full bg-white rounded-xl shadow-xl">
+      <div className="w-96 h-56 -mt-28 m-auto bg-red-100 rounded-xl relative text-white shadow-2xl transition-transform transform hover:scale-110">
+        <img
+          className="relative object-cover w-full h-full rounded-xl"
+          src="https://i.imgur.com/Zi6v09P.png"
+          alt="credit-card-background"
+        />
+        <div className="w-full px-8 absolute top-8">
+          <div className="flex justify-between">
+            <div className="">
+              <p className="font-light">Name</p>
+              <p className="font-medium tracking-widest uppercase">{name}</p>
+            </div>
+            <img
+              className="w-14 h-14"
+              src="https://i.imgur.com/bbPHJVe.png"
+              alt="credit-card-logo"
+            />
+          </div>
+          <div className="pt-1">
+            <p className="font-light">Card Number</p>
+            <p className="font-medium tracking-more-wider font-mono">
+              {placeholder}
+            </p>
+          </div>
+          <div className="pt-6 pr-6">
+            <div className="flex justify-between">
+              <div className="">
+                <p className="font-light text-xs">Valid</p>
+                <p className="font-medium tracking-wider text-sm">11/15</p>
+              </div>
+              <div className="">
+                <p className="font-light text-xs text-xs">Expiry</p>
+                <p className="font-medium tracking-wider text-sm">03/25</p>
+              </div>
+
+              <div className="">
+                <p className="font-light text-xs">CVV</p>
+                <p className="font-bold tracking-more-wider text-sm"></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <form className="w-full bg-white p-8 space-y-6" onSubmit={onSubmit}>
+      <form
+        className="w-full bg-white p-8 space-y-6 rounded-bl-xl rounded-br-xl"
+        onSubmit={onSubmit}
+      >
         <div>
           <label
             htmlFor="name"
