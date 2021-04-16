@@ -8,7 +8,9 @@ import {
   CARD_PLACEHOLDER_NAME,
   CARD_PLACEHOLDER_NUMBER,
   CARD_PLACEHOLDER_CVV,
+  CREDIT_CARD_TYPE_VISA,
 } from './../constants';
+import mastercard from './../assets/mastercard.svg';
 
 const CreditCard = () => {
   const [cardHolderName, setName] = useState(CARD_PLACEHOLDER_NAME);
@@ -22,6 +24,7 @@ const CreditCard = () => {
   );
   const [cvv, setCvv] = useState(CARD_PLACEHOLDER_CVV);
   const [isCardFlipped, setCardFlipped] = useState(false);
+  const [cardType, setCardType] = useState('');
 
   const onChangeName = e => setName(e.target.value);
 
@@ -33,7 +36,11 @@ const CreditCard = () => {
     const creditCard = card.parse(e.target.value);
     setCardNumber(() => card.format(creditCard));
     setPlaceholder(() => setCardMask(creditCard));
+    setCardType(() => card.type(creditCard));
   };
+
+  const getCardType =
+    CREDIT_CARD_TYPES.get(cardType) || CREDIT_CARD_TYPE_VISA.toLowerCase();
 
   const setCardMask = creditCard => {
     const mask = '****************';
@@ -70,7 +77,12 @@ const CreditCard = () => {
           }
         >
           <div className="absolute front w-full h-56 rounded-xl bg-gradient-to-r from-indigo-500 to-pink-700 shadow-2xl">
-            <div className="w-full h-full flex flex-col justify-between p-6">
+            <div className="relative w-full h-full flex flex-col justify-between p-6">
+              <img
+                src={require(`./../assets/${getCardType}.svg`).default}
+                alt={getCardType}
+                className="w-8 h-8"
+              />
               <div className="flex justify-between">
                 <div>
                   <span className="credit-card-label">Name</span>
@@ -115,7 +127,7 @@ const CreditCard = () => {
             type="text"
             name="name"
             id="name"
-            maxLength="22"
+            maxLength="26"
             autoComplete="off"
             className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
             onChange={onChangeName}
