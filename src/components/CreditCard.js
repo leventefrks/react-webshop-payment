@@ -61,23 +61,21 @@ const CreditCard = () => {
             <div className="w-full h-full flex flex-col justify-between p-6">
               <div className="flex justify-between">
                 <div>
-                  <p className="font-light text-xs">Name</p>
-                  <p className="mt-1 font-medium tracking-widest uppercase font-mono text-sm text-gray-700">
+                  <span className="credit-card-label">Name</span>
+                  <p className="credit-card-input">
                     {cardHolderName ? cardHolderName : 'JOHN DOE'}
                   </p>
                 </div>
               </div>
               <div>
-                <p className="font-light text-xs">Card Number</p>
-                <p className="mt-1 font-medium tracking-widest font-mono text-md text-gray-700">
-                  {cardPlaceholder}
-                </p>
+                <p className="credit-card-label">Card Number</p>
+                <p className="credit-card-input">{cardPlaceholder}</p>
               </div>
               <div>
                 <div className="w-full flex justify-between space-x-4">
                   <div className="flex-1">
-                    <p className="font-light text-xs">Valid Thru</p>
-                    <p className="font-medium tracking-wider text-sm font-mono text-gray-700"></p>
+                    <p className="credit-card-label">Valid Thru</p>
+                    <p className="credit-card-input"></p>
                   </div>
                 </div>
               </div>
@@ -87,16 +85,12 @@ const CreditCard = () => {
             <div className="absolute top-10 w-full bg-gray-700 h-8"></div>
             <div className="w-full flex justify-between mx-6 mb-6 ">
               <div className="flex-1">
-                <p className="font-light text-xs">Expiry</p>
-                <p className="font-medium tracking-wider text-sm font-mono text-gray-700">
-                  {expirationDate}
-                </p>
+                <p className="credit-card-label">Expiry</p>
+                <p className="credit-card-input">{expirationDate}</p>
               </div>
               <div className="flex-1">
-                <p className="font-light text-xs">CVV</p>
-                <p className="font-bold tracking-more-wider text-sm font-mono text-gray-700">
-                  {cvv ? cvv : '123'}
-                </p>
+                <p className="credit-card-label">CVV</p>
+                <p className="credit-card-input">{cvv ? cvv : '123'}</p>
               </div>
             </div>
             <SiContactlesspayment className="absolute top-4 right-4 w-10 h-10" />
@@ -108,10 +102,7 @@ const CreditCard = () => {
         onSubmit={onSubmit}
       >
         <div>
-          <label
-            htmlFor="name"
-            className="text-sm text-gray-600 dark:text-gray-400 capitalize"
-          >
+          <label htmlFor="name" className="form-label">
             card holder
           </label>
           <input
@@ -125,10 +116,7 @@ const CreditCard = () => {
           />
         </div>
         <div>
-          <label
-            htmlFor="card-number"
-            className="text-sm text-gray-600 dark:text-gray-400 capitalize"
-          >
+          <label htmlFor="card-number" className="form-label">
             card number
           </label>
           <input
@@ -143,10 +131,7 @@ const CreditCard = () => {
         </div>
         <div className="flex space-x-4 items-end">
           <div className="flex-1">
-            <label
-              htmlFor="expiration-date-month"
-              className="text-sm text-gray-600 dark:text-gray-400 capitalize"
-            >
+            <label htmlFor="expiration-date-month" className="form-label">
               expiration date
             </label>
             <input
@@ -158,10 +143,7 @@ const CreditCard = () => {
             />
           </div>
           <div className="flex-1">
-            <label
-              htmlFor="expiration-date"
-              className="text-xs text-gray-600 dark:text-gray-400 capitalize"
-            ></label>
+            <label htmlFor="expiration-date" className="form-label"></label>
             <input
               type="text"
               name="expiration-date-month"
@@ -171,10 +153,7 @@ const CreditCard = () => {
             />
           </div>
           <div className="flex-1">
-            <label
-              htmlFor="expiration-date-year"
-              className="text-xs text-gray-600 dark:text-gray-400 uppercase"
-            >
+            <label htmlFor="expiration-date-year" className="form-label">
               cvv
             </label>
             <input
@@ -190,10 +169,7 @@ const CreditCard = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="w-full p-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md focus:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 capitalize"
-        >
+        <button type="submit" className="btn">
           save card details
         </button>
       </form>
