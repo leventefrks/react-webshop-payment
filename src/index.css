@@ -11,11 +11,11 @@
 }
 
 .credit-card-label {
-  @apply font-light text-xs;
+  @apply font-light text-sm;
 }
 
 .credit-card-input {
-  @apply font-bold text-sm font-mono text-gray-700;
+  @apply font-bold text-xl font-mono text-gray-700;
 }
 
 .card-container {

@@ -1,14 +1,26 @@
 import { useState } from 'react';
 import { card } from 'creditcards';
 import { SiContactlesspayment } from 'react-icons/si';
+import {
+  CREDIT_CARD_TYPES,
+  CARD_PLACEHOLDER_EXPIRATION_MONTH,
+  CARD_PLACEHOLDER_EXPIRATION_YEAR,
+  CARD_PLACEHOLDER_NAME,
+  CARD_PLACEHOLDER_NUMBER,
+  CARD_PLACEHOLDER_CVV,
+} from './../constants';
 
 const CreditCard = () => {
-  const [cardHolderName, setName] = useState('');
+  const [cardHolderName, setName] = useState(CARD_PLACEHOLDER_NAME);
   const [cardNumber, setCardNumber] = useState('');
-  const [cardPlaceholder, setPlaceholder] = useState('**** **** **** ****');
-  const [expirationMonth, setExpirationMonth] = useState('02');
-  const [expirationYear, setExpirationYear] = useState('22');
-  const [cvv, setCvv] = useState('123');
+  const [cardPlaceholder, setPlaceholder] = useState(CARD_PLACEHOLDER_NUMBER);
+  const [expirationMonth, setExpirationMonth] = useState(
+    CARD_PLACEHOLDER_EXPIRATION_MONTH
+  );
+  const [expirationYear, setExpirationYear] = useState(
+    CARD_PLACEHOLDER_EXPIRATION_YEAR
+  );
+  const [cvv, setCvv] = useState(CARD_PLACEHOLDER_CVV);
   const [isCardFlipped, setCardFlipped] = useState(false);
 
   const onChangeName = e => setName(e.target.value);
@@ -46,7 +58,7 @@ const CreditCard = () => {
     console.log('submit');
   };
 
-  const expirationDate = `${expirationMonth}/${expirationYear}`;
+  const expirationDate = `${CARD_PLACEHOLDER_EXPIRATION_MONTH}/${CARD_PLACEHOLDER_EXPIRATION_YEAR}`;
 
   return (
     <div className="w-full rounded-xl bg-white shadow-xl">
@@ -63,21 +75,13 @@ const CreditCard = () => {
                 <div>
                   <span className="credit-card-label">Name</span>
                   <p className="credit-card-input">
-                    {cardHolderName ? cardHolderName : 'JOHN DOE'}
+                    {cardHolderName ? cardHolderName : CARD_PLACEHOLDER_NAME}
                   </p>
                 </div>
               </div>
               <div>
                 <p className="credit-card-label">Card Number</p>
                 <p className="credit-card-input">{cardPlaceholder}</p>
-              </div>
-              <div>
-                <div className="w-full flex justify-between space-x-4">
-                  <div className="flex-1">
-                    <p className="credit-card-label">Valid Thru</p>
-                    <p className="credit-card-input"></p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -90,7 +94,9 @@ const CreditCard = () => {
               </div>
               <div className="flex-1">
                 <p className="credit-card-label">CVV</p>
-                <p className="credit-card-input">{cvv ? cvv : '123'}</p>
+                <p className="credit-card-input">
+                  {cvv ? cvv : CARD_PLACEHOLDER_CVV}
+                </p>
               </div>
             </div>
             <SiContactlesspayment className="absolute top-4 right-4 w-10 h-10" />
