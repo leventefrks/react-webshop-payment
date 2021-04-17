@@ -12,7 +12,7 @@ const Card = ({
   cvv,
 }) => {
   return (
-    <div className="card-container w-96 h-56 -mt-28 relative text-white duration-300 transform hover:scale-110">
+    <div className="card-container w-80 md:w-96 h-56 -mt-28 relative text-white duration-300 transform hover:scale-105 md:hover:scale-110">
       <div
         className={`card absolute w-full h-56 transition duration-700 ease-out
           ${isCardFlipped ? 'is-flipped' : ''} `}

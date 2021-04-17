@@ -14,7 +14,7 @@ const Form = ({
 }) => {
   return (
     <form
-      className="w-full bg-white p-6 space-y-3 rounded-bl-xl rounded-br-xl"
+      className="w-full bg-white p-3 md:p-6 space-y-3 rounded-bl-xl rounded-br-xl"
       onSubmit={onSubmit}
     >
       <div>
@@ -68,7 +68,7 @@ const Form = ({
           <Select
             name="expiration-year"
             defaultValue={CARD_MIN_EXPIRATION_YEAR}
-            length={10}
+            length={6}
             isLeading={false}
             onChange={onChangeExpirationYear}
           />
