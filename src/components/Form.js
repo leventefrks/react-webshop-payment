@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import Select from './Select';
 import { CARD_MIN_EXPIRATION_YEAR } from './../constants';
 
 const Form = ({
@@ -53,40 +53,20 @@ const Form = ({
           >
             expiration date
           </label>
-          <select
-            name="expiration-date-month"
-            id="expiration-date-month"
-            className="form-input"
-            autoComplete="off"
+          <Select
+            name="expiration-month"
+            defaultValue={1}
+            length={12}
             onChange={onChangeExpirationMonth}
-          >
-            <option value="" defaultValue="Month" disabled hidden />
-            {[...Array(13).keys()].map((item, key) =>
-              key !== 0 ? (
-                <option key={key} value={key}>
-                  {key}
-                </option>
-              ) : (
-                ''
-              )
-            )}
-          </select>
+          />
         </div>
         <div className="flex-1">
-          <select
-            name="expiration-date-year"
-            id="expiration-date-year"
-            className="form-input"
-            autoComplete="off"
+          <Select
+            name="expiration-year"
+            defaultValue={CARD_MIN_EXPIRATION_YEAR}
+            length={10}
             onChange={onChangeExpirationYear}
-          >
-            <option value="" defaultValue="Year" disabled hidden />
-            {[...Array(8).keys()].map((item, key) => (
-              <option key={key} value={CARD_MIN_EXPIRATION_YEAR + key}>
-                {CARD_MIN_EXPIRATION_YEAR + key}
-              </option>
-            ))}
-          </select>
+          />
         </div>
         <div className="flex-1">
           <label htmlFor="cvv" className="form-label uppercase">

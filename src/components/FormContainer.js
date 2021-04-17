@@ -1,12 +1,6 @@
 import { useState } from 'react';
 import { card } from 'creditcards';
-import {
-  CARD_PLACEHOLDER_EXPIRATION_MONTH,
-  CARD_PLACEHOLDER_EXPIRATION_YEAR,
-  CARD_PLACEHOLDER_NAME,
-  CARD_PLACEHOLDER_NUMBER,
-  CARD_PLACEHOLDER_CVV,
-} from '../constants';
+import { CARD_PLACEHOLDER_NAME, CARD_PLACEHOLDER_NUMBER } from '../constants';
 import CreditCard from './CreditCard';
 import Form from './Form';
 
