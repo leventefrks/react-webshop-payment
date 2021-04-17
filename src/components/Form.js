@@ -47,10 +47,7 @@ const Form = ({
       </div>
       <div className="flex space-x-4 items-end">
         <div className="flex-1">
-          <label
-            htmlFor="expiration-date-month"
-            className="form-label capitalize"
-          >
+          <label htmlFor="expiration-date" className="form-label capitalize">
             expiration date
           </label>
           <Select
