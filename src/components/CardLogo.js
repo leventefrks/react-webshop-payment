@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { CREDIT_CARD_TYPES, CREDIT_CARD_TYPE_VISA } from './../constants';
 
 const CardLogo = ({ type }) => {
@@ -10,6 +11,10 @@ const CardLogo = ({ type }) => {
       className="absolute top-4 right-4 w-10 h-10"
     />
   );
+};
+
+CardLogo.propTypes = {
+  type: PropTypes.string,
 };
 
 export default CardLogo;

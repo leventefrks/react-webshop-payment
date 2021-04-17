@@ -22,27 +22,41 @@ const CreditCard = ({
             <CardLogo type={cardType} />
             <div className="flex justify-between">
               <div>
-                <span className="credit-card-label">Name</span>
-                <div className="credit-card-input">
+                <label htmlFor="name" className="credit-card-label">
+                  Name
+                </label>
+                <div name="name" id="name" className="credit-card-input">
                   {cardHolderName ? cardHolderName : CARD_PLACEHOLDER_NAME}
                 </div>
               </div>
             </div>
             <div>
-              <div className="credit-card-label">Card Number</div>
-              <div className="credit-card-input">{cardPlaceholder}</div>
+              <label htmlFor="card-number" className="credit-card-label">
+                Card Number
+              </label>
+              <div
+                name="card-number"
+                id="card-number"
+                className="credit-card-input"
+              >
+                {cardPlaceholder}
+              </div>
+            </div>
+            <div className="self-end">
+              <label htmlFor="expiry" className="credit-card-label">
+                Expiry
+              </label>
+              <div name="expiry" id="expiry" className="credit-card-input">
+                {expirationDate}
+              </div>
             </div>
           </div>
         </div>
         <div className="absolute back w-full h-56 items-end flex rounded-xl shadow-md bg-gradient-to-r from-pink-500 to-indigo-700">
           <div className="absolute top-10 w-full bg-gray-700 h-8"></div>
-          <div className="w-full flex justify-between mx-6 mb-6 ">
-            <div className="flex-1">
-              <div className="credit-card-label">Expiry</div>
-              <div className="credit-card-input">{expirationDate}</div>
-            </div>
-            <div className="flex-1">
-              <div className="credit-card-label uppercase">cvv</div>
+          <div className="w-full flex justify-end p-8">
+            <div>
+              <label className="credit-card-label uppercase">cvv</label>
               <div className="credit-card-input">
                 {cvv ? cvv : CARD_PLACEHOLDER_CVV}
               </div>
