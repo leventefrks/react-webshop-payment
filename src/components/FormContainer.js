@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { card } from 'creditcards';
 import {
-  CREDIT_CARD_TYPES,
   CARD_PLACEHOLDER_EXPIRATION_MONTH,
   CARD_PLACEHOLDER_EXPIRATION_YEAR,
   CARD_PLACEHOLDER_NAME,
   CARD_PLACEHOLDER_NUMBER,
   CARD_PLACEHOLDER_CVV,
-  CREDIT_CARD_TYPE_VISA,
 } from '../constants';
 import CreditCard from './CreditCard';
 import Form from './Form';
@@ -18,7 +16,7 @@ const FormContainer = () => {
   const [cardPlaceholder, setPlaceholder] = useState(CARD_PLACEHOLDER_NUMBER);
   const [expirationMonth, setExpirationMonth] = useState('');
   const [expirationYear, setExpirationYear] = useState('');
-  const [cvv, setCvv] = useState('');
+  const [cvv, setCvv] = useState(123);
   const [isCardFlipped, setCardFlipped] = useState(false);
   const [cardType, setCardType] = useState('');
 
@@ -39,6 +37,8 @@ const FormContainer = () => {
   const onChangeExpirationMonth = e => setExpirationMonth(e.target.value);
 
   const onChangeExpirationYear = e => setExpirationYear(e.target.value);
+
+  const expirationDate = `${expirationMonth}/${expirationYear}`;
 
   const setCardMask = creditCard => {
     const mask = '****************';
@@ -63,15 +63,10 @@ const FormContainer = () => {
     console.log('submit');
   };
 
-  const getCardType =
-    CREDIT_CARD_TYPES.get(cardType) || CREDIT_CARD_TYPE_VISA.toLowerCase();
-
-  const expirationDate = `${expirationMonth}/${expirationYear}`;
-
   return (
     <div className="w-full flex flex-col items-center rounded-xl bg-white shadow-xl">
       <CreditCard
-        getCardType={getCardType}
+        cardType={cardType}
         isCardFlipped={isCardFlipped}
         cardHolderName={cardHolderName}
         cardPlaceholder={cardPlaceholder}
