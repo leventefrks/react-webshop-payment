@@ -53,7 +53,7 @@ const Card = ({
           </div>
         </div>
         <div className="absolute back w-full h-56 items-end flex rounded-xl shadow-md bg-gradient-to-r from-pink-500 to-indigo-700">
-          <div className="absolute top-10 w-full bg-gray-700 h-8"></div>
+          <div className="absolute top-14 w-full bg-gray-700 h-8"></div>
           <div className="w-full p-8">
             <div>
               <label className="credit-card-label uppercase">cvv</label>
@@ -62,7 +62,7 @@ const Card = ({
               </div>
             </div>
           </div>
-          <SiContactlesspayment className="absolute top-4 right-4 w-10 h-10" />
+          <SiContactlesspayment className="absolute top-2 right-2 w-12 h-12" />
         </div>
       </div>
     </div>

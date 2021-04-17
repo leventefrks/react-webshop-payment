@@ -4,7 +4,7 @@ export const CARD_PLACEHOLDER_EXPIRATION_MONTH = '01';
 export const CARD_PLACEHOLDER_EXPIRATION_YEAR = new Date().getFullYear();
 
 export const CARD_PLACEHOLDER_NUMBER = '**** **** **** ****';
-export const CARD_PLACEHOLDER_CVV = 123;
+export const CARD_PLACEHOLDER_CVV = '123';
 
 export const CARD_MIN_EXPIRATION_YEAR = new Date().getFullYear();
 
