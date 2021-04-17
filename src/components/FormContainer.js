@@ -40,6 +40,8 @@ const FormContainer = () => {
 
   const onFocusCvv = () => setCardFlipped(!isCardFlipped);
 
+  const onChangeExpirationMonth = e => setExpirationMonth(e.target.value);
+
   const setCardMask = creditCard => {
     const mask = '****************';
     const currentMask = [...mask]
@@ -84,6 +86,7 @@ const FormContainer = () => {
         onChangeCvv={onChangeCvv}
         onFocusCvv={onFocusCvv}
         onChangeName={onChangeName}
+        onChangeExpirationMonth={onChangeExpirationMonth}
         onSubmit={onSubmit}
       />
     </div>

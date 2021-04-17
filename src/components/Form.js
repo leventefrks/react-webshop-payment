@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { CARD_MIN_EXPIRATION_YEAR } from './../constants';
 
 const Form = ({
   cardNumber,
@@ -7,6 +9,7 @@ const Form = ({
   onFocusCvv,
   onChangeName,
   onSubmit,
+  onChangeExpirationMonth,
 }) => {
   return (
     <form
@@ -49,22 +52,40 @@ const Form = ({
           >
             expiration date
           </label>
-          <input
-            type="text"
+          <select
             name="expiration-date-month"
             id="expiration-date-month"
-            autoComplete="off"
             className="form-input"
-          />
+            autoComplete="off"
+            onChange={onChangeExpirationMonth}
+          >
+            <option value="" defaultValue="Month" disabled hidden />
+            {[...Array(13).keys()].map((item, key) =>
+              key !== 0 ? (
+                <option key={key} value={key}>
+                  {key}
+                </option>
+              ) : (
+                ''
+              )
+            )}
+          </select>
         </div>
         <div className="flex-1">
-          <input
-            type="text"
-            name="expiration-date-month"
-            id="expiration-date-month"
-            autoComplete="off"
+          <select
+            name="expiration-date-year"
+            id="expiration-date-year"
             className="form-input"
-          />
+            autoComplete="off"
+            onChange={onChangeExpirationMonth}
+          >
+            <option value="" defaultValue="Year" disabled hidden />
+            {[...Array(8).keys()].map((item, key) => (
+              <option key={key} value={CARD_MIN_EXPIRATION_YEAR + key}>
+                {CARD_MIN_EXPIRATION_YEAR + key}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="flex-1">
           <label htmlFor="cvv" className="form-label uppercase">
@@ -93,6 +114,7 @@ const Form = ({
 Form.propTypes = {
   cardNumber: PropTypes.string,
   onChangeCardNumber: PropTypes.func,
+  onChangeExpirationMonth: PropTypes.func,
   onChangeCvv: PropTypes.func,
   onFocusCvv: PropTypes.func,
   onChangeName: PropTypes.func,
