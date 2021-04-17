@@ -2,7 +2,7 @@
 
 - React
 - [TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
-- [CreditCars](https://github.com/bendrucker/creditcards)
+- [CreditCards](https://github.com/bendrucker/creditcards)
 
 ## Available Scripts
 
