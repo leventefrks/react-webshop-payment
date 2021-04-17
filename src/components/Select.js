@@ -9,7 +9,7 @@ const Select = ({ name, onChange, length, defaultValue }) => {
       autoComplete="off"
       onChange={onChange}
     >
-      <option />
+      <option hidden />
       {[...Array(length).keys()].map((item, key) => (
         <option key={key} value={defaultValue + key}>
           {defaultValue + key}

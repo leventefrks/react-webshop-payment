@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { SiContactlesspayment } from 'react-icons/si';
-import { CARD_PLACEHOLDER_CVV, CARD_PLACEHOLDER_NAME } from './../constants';
+import { CARD_PLACEHOLDER_CVV, CARD_PLACEHOLDER_NAME } from '../constants';
 import CardLogo from './CardLogo';
 
-const CreditCard = ({
+const Card = ({
   cardType,
   isCardFlipped,
   cardHolderName,
@@ -69,7 +69,7 @@ const CreditCard = ({
   );
 };
 
-CreditCard.propTypes = {
+Card.propTypes = {
   isCardFlipped: PropTypes.bool,
   cardType: PropTypes.string,
   cardHolderName: PropTypes.string,
@@ -78,4 +78,4 @@ CreditCard.propTypes = {
   cvv: PropTypes.string,
 };
 
-export default CreditCard;
+export default Card;

@@ -8,7 +8,7 @@ import {
   CARD_PLACEHOLDER_CVV,
   CREDIT_CARD_TYPE_VISA,
 } from '../constants';
-import CreditCard from './CreditCard';
+import Card from './Card';
 import Form from './Form';
 
 const FormContainer = () => {
@@ -60,7 +60,7 @@ const FormContainer = () => {
 
   return (
     <div className="w-full flex flex-col items-center rounded-xl bg-white shadow-xl">
-      <CreditCard
+      <Card
         cardType={cardType}
         isCardFlipped={isCardFlipped}
         cardHolderName={cardHolderName}
