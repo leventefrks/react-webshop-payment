@@ -1,6 +1,6 @@
 // placeholder values
 export const CARD_PLACEHOLDER_NAME = 'JOHN DOE';
-export const CARD_PLACEHOLDER_EXPIRATION_MONTH = new Date().getMonth();
+export const CARD_PLACEHOLDER_EXPIRATION_MONTH = '01';
 export const CARD_PLACEHOLDER_EXPIRATION_YEAR = new Date().getFullYear();
 
 export const CARD_PLACEHOLDER_NUMBER = '**** **** **** ****';

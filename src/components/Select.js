@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 
-const Select = ({ name, onChange, length, defaultValue }) => {
+const leadingZero = (number, digits) =>
+  Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+
+const Select = ({ name, onChange, length, defaultValue, isLeading }) => {
   return (
     <select
       name={name}
@@ -11,8 +14,13 @@ const Select = ({ name, onChange, length, defaultValue }) => {
     >
       <option hidden />
       {[...Array(length).keys()].map((item, key) => (
-        <option key={key} value={defaultValue + key}>
-          {defaultValue + key}
+        <option
+          key={key}
+          value={
+            isLeading ? leadingZero(defaultValue + key, 2) : defaultValue + key
+          }
+        >
+          {isLeading ? leadingZero(defaultValue + key, 2) : defaultValue + key}
         </option>
       ))}
     </select>
@@ -21,6 +29,7 @@ const Select = ({ name, onChange, length, defaultValue }) => {
 
 Select.propTypes = {
   onChange: PropTypes.func,
+  isLeading: PropTypes.bool,
 };
 
 export default Select;

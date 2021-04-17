@@ -60,6 +60,7 @@ const Form = ({
             name="expiration-month"
             defaultValue={1}
             length={12}
+            isLeading={true}
             onChange={onChangeExpirationMonth}
           />
         </div>
@@ -68,6 +69,7 @@ const Form = ({
             name="expiration-year"
             defaultValue={CARD_MIN_EXPIRATION_YEAR}
             length={10}
+            isLeading={false}
             onChange={onChangeExpirationYear}
           />
         </div>
