@@ -18,7 +18,10 @@ const Form = ({
       onSubmit={onSubmit}
     >
       <div>
-        <label htmlFor="card-number" className="form-label capitalize">
+        <label
+          htmlFor="card-number"
+          className="form-label capitalize select-none"
+        >
           card number
         </label>
         <input
@@ -32,7 +35,7 @@ const Form = ({
         />
       </div>
       <div>
-        <label htmlFor="name" className="form-label capitalize">
+        <label htmlFor="name" className="form-label capitalize select-none">
           card holder
         </label>
         <input
@@ -47,7 +50,10 @@ const Form = ({
       </div>
       <div className="flex space-x-4 items-end">
         <div className="flex-1">
-          <label htmlFor="expiration-date" className="form-label capitalize">
+          <label
+            htmlFor="expiration-date"
+            className="form-label capitalize select-none"
+          >
             expiration date
           </label>
           <Select
@@ -66,7 +72,7 @@ const Form = ({
           />
         </div>
         <div className="flex-1">
-          <label htmlFor="cvv" className="form-label uppercase">
+          <label htmlFor="cvv" className="form-label uppercase select-none">
             cvv
           </label>
           <input

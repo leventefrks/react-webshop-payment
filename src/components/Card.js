@@ -54,7 +54,7 @@ const Card = ({
         </div>
         <div className="absolute back w-full h-56 items-end flex rounded-xl shadow-md bg-gradient-to-r from-pink-500 to-indigo-700">
           <div className="absolute top-10 w-full bg-gray-700 h-8"></div>
-          <div className="w-full flex justify-end p-8">
+          <div className="w-full p-8">
             <div>
               <label className="credit-card-label uppercase">cvv</label>
               <div className="credit-card-input">
