@@ -1,8 +1,8 @@
 # [WIP] - React Credit Card Form Component
 
 - React
-- [https://github.com/tailwindlabs/tailwindcss](TailwindCSS)
-- [https://github.com/bendrucker/creditcards](CreditCards)
+- [TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
+- [CreditCars](https://github.com/bendrucker/creditcards)
 
 ## Available Scripts
 
