@@ -48,7 +48,7 @@ const Form = ({
           onChange={onChangeName}
         />
       </div>
-      <div className="flex space-x-4 items-end">
+      <div className="flex flex-col md:flex-row md:space-x-4 md:items-end space-y-4 md:space-y-0">
         <div className="flex-1">
           <label
             htmlFor="expiration-date"
