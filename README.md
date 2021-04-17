@@ -1,10 +1,8 @@
 # [WIP] - React Credit Card Form Component
 
 - React
-- TailwindCSS
-- PostCSS
-- Autoprefixer
-- CreditCards
+- [https://github.com/tailwindlabs/tailwindcss](TailwindCSS)
+- [https://github.com/bendrucker/creditcards](CreditCards)
 
 ## Available Scripts
 

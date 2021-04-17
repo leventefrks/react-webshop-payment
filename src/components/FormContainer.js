@@ -28,6 +28,7 @@ const FormContainer = () => {
 
   const onChangeCardNumber = e => {
     const creditCard = card.parse(e.target.value);
+
     setCardNumber(() => card.format(creditCard));
     setPlaceholder(() => setCardMask(creditCard));
     setCardType(() => card.type(creditCard));
