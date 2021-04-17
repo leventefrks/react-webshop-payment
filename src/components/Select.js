@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
-const leadingZero = (number, digits) =>
-  Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+const leadingZero = value => value.toString().padStart(2, '0');
 
 const Select = ({ name, onChange, length, defaultValue, isLeading }) => {
   return (
@@ -17,10 +16,10 @@ const Select = ({ name, onChange, length, defaultValue, isLeading }) => {
         <option
           key={key}
           value={
-            isLeading ? leadingZero(defaultValue + key, 2) : defaultValue + key
+            isLeading ? leadingZero(defaultValue + key) : defaultValue + key
           }
         >
-          {isLeading ? leadingZero(defaultValue + key, 2) : defaultValue + key}
+          {isLeading ? leadingZero(defaultValue + key) : defaultValue + key}
         </option>
       ))}
     </select>
