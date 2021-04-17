@@ -2,8 +2,9 @@
 
 - React
 - TailwindCSS
+- PostCSS
+- Autoprefixer
 - CreditCards
-- CreditCards Types
 
 ## Available Scripts
 
