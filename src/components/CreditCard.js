@@ -15,8 +15,7 @@ const CreditCard = ({
   expirationDate,
   cvv,
 }) => {
-  const getCardType =
-    CREDIT_CARD_TYPES.get(cardType) || CREDIT_CARD_TYPE_VISA.toLowerCase();
+  const getCardType = CREDIT_CARD_TYPES.get(cardType);
 
   return (
     <div className="card-container w-96 h-56 -mt-28 relative text-white duration-300 transform hover:scale-110">
