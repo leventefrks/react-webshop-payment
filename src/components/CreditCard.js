@@ -1,6 +1,5 @@
 import { SiContactlesspayment } from 'react-icons/si';
 import { CARD_PLACEHOLDER_CVV, CARD_PLACEHOLDER_NAME } from './../constants';
-import mastercard from './../assets/mastercard.svg';
 
 const CreditCard = ({
   isCardFlipped,
