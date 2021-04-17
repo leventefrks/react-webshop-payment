@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { SiContactlesspayment } from 'react-icons/si';
 import { CARD_PLACEHOLDER_CVV, CARD_PLACEHOLDER_NAME } from './../constants';
 
@@ -10,7 +11,7 @@ const CreditCard = ({
   cvv,
 }) => {
   return (
-    <div className="card-container w-96 h-56 -mt-28 mx-auto relative text-white duration-300 transform hover:scale-110">
+    <div className="card-container w-96 h-56 -mt-28 relative text-white duration-300 transform hover:scale-110">
       <div
         className={
           'card absolute w-full h-56 transition duration-700 ease-out ' +
@@ -59,6 +60,13 @@ const CreditCard = ({
   );
 };
 
-CreditCard.propTypes = {};
+CreditCard.propTypes = {
+  isCardFlipped: PropTypes.bool,
+  getCardType: PropTypes.string,
+  cardHolderName: PropTypes.string,
+  cardPlaceholder: PropTypes.string,
+  expirationDate: PropTypes.string,
+  cvv: PropTypes.string,
+};
 
 export default CreditCard;

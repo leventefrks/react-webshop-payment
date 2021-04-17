@@ -22,7 +22,7 @@ const FormContainer = () => {
   const [expirationYear, setExpirationYear] = useState(
     CARD_PLACEHOLDER_EXPIRATION_YEAR
   );
-  const [cvv, setCvv] = useState(CARD_PLACEHOLDER_CVV);
+  const [cvv, setCvv] = useState('');
   const [isCardFlipped, setCardFlipped] = useState(false);
   const [cardType, setCardType] = useState('');
 
@@ -68,7 +68,7 @@ const FormContainer = () => {
   const expirationDate = `${CARD_PLACEHOLDER_EXPIRATION_MONTH}/${CARD_PLACEHOLDER_EXPIRATION_YEAR}`;
 
   return (
-    <div className="w-full rounded-xl bg-white shadow-xl">
+    <div className="w-full flex flex-col items-center rounded-xl bg-white shadow-xl">
       <CreditCard
         getCardType={getCardType}
         isCardFlipped={isCardFlipped}

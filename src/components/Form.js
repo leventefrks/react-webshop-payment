@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Form = ({
   cardNumber,
   onChangeCardNumber,
@@ -12,21 +14,7 @@ const Form = ({
       onSubmit={onSubmit}
     >
       <div>
-        <label htmlFor="name" className="form-label">
-          card holder
-        </label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          maxLength="26"
-          autoComplete="off"
-          className="form-input"
-          onChange={onChangeName}
-        />
-      </div>
-      <div>
-        <label htmlFor="card-number" className="form-label">
+        <label htmlFor="card-number" className="form-label capitalize">
           card number
         </label>
         <input
@@ -39,9 +27,26 @@ const Form = ({
           onChange={onChangeCardNumber}
         />
       </div>
+      <div>
+        <label htmlFor="name" className="form-label capitalize">
+          card holder
+        </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          maxLength="26"
+          autoComplete="off"
+          className="form-input"
+          onChange={onChangeName}
+        />
+      </div>
       <div className="flex space-x-4 items-end">
         <div className="flex-1">
-          <label htmlFor="expiration-date-month" className="form-label">
+          <label
+            htmlFor="expiration-date-month"
+            className="form-label capitalize"
+          >
             expiration date
           </label>
           <input
@@ -83,6 +88,15 @@ const Form = ({
       </button>
     </form>
   );
+};
+
+Form.propTypes = {
+  cardNumber: PropTypes.string,
+  onChangeCardNumber: PropTypes.func,
+  onChangeCvv: PropTypes.func,
+  onFocusCvv: PropTypes.func,
+  onChangeName: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
 
 export default Form;

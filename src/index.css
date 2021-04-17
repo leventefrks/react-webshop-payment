@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
-  @apply w-full p-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md focus:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 capitalize;
-}
-
 .form-label {
-  @apply text-sm text-gray-600 capitalize;
+  @apply text-sm text-gray-600;
 }
 
 .form-input {
@@ -36,6 +32,10 @@
   backface-visibility: hidden;
 }
 
+.front img {
+  backface-visibility: hidden;
+}
+
 .back {
   backface-visibility: hidden;
   transform: rotateY(180deg);
@@ -43,4 +43,8 @@
 
 .is-flipped {
   transform: rotateY(180deg);
+}
+
+.btn {
+  @apply w-full p-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md focus:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 capitalize;
 }
