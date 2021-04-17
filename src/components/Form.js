@@ -10,6 +10,7 @@ const Form = ({
   onChangeName,
   onSubmit,
   onChangeExpirationMonth,
+  onChangeExpirationYear,
 }) => {
   return (
     <form
@@ -77,7 +78,7 @@ const Form = ({
             id="expiration-date-year"
             className="form-input"
             autoComplete="off"
-            onChange={onChangeExpirationMonth}
+            onChange={onChangeExpirationYear}
           >
             <option value="" defaultValue="Year" disabled hidden />
             {[...Array(8).keys()].map((item, key) => (
@@ -115,6 +116,7 @@ Form.propTypes = {
   cardNumber: PropTypes.string,
   onChangeCardNumber: PropTypes.func,
   onChangeExpirationMonth: PropTypes.func,
+  onChangeExpirationYear: PropTypes.func,
   onChangeCvv: PropTypes.func,
   onFocusCvv: PropTypes.func,
   onChangeName: PropTypes.func,

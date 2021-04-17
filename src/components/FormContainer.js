@@ -16,12 +16,8 @@ const FormContainer = () => {
   const [cardHolderName, setName] = useState(CARD_PLACEHOLDER_NAME);
   const [cardNumber, setCardNumber] = useState('');
   const [cardPlaceholder, setPlaceholder] = useState(CARD_PLACEHOLDER_NUMBER);
-  const [expirationMonth, setExpirationMonth] = useState(
-    CARD_PLACEHOLDER_EXPIRATION_MONTH
-  );
-  const [expirationYear, setExpirationYear] = useState(
-    CARD_PLACEHOLDER_EXPIRATION_YEAR
-  );
+  const [expirationMonth, setExpirationMonth] = useState('');
+  const [expirationYear, setExpirationYear] = useState('');
   const [cvv, setCvv] = useState('');
   const [isCardFlipped, setCardFlipped] = useState(false);
   const [cardType, setCardType] = useState('');
@@ -41,6 +37,8 @@ const FormContainer = () => {
   const onFocusCvv = () => setCardFlipped(!isCardFlipped);
 
   const onChangeExpirationMonth = e => setExpirationMonth(e.target.value);
+
+  const onChangeExpirationYear = e => setExpirationYear(e.target.value);
 
   const setCardMask = creditCard => {
     const mask = '****************';
@@ -68,7 +66,7 @@ const FormContainer = () => {
   const getCardType =
     CREDIT_CARD_TYPES.get(cardType) || CREDIT_CARD_TYPE_VISA.toLowerCase();
 
-  const expirationDate = `${CARD_PLACEHOLDER_EXPIRATION_MONTH}/${CARD_PLACEHOLDER_EXPIRATION_YEAR}`;
+  const expirationDate = `${expirationMonth}/${expirationYear}`;
 
   return (
     <div className="w-full flex flex-col items-center rounded-xl bg-white shadow-xl">
@@ -87,6 +85,7 @@ const FormContainer = () => {
         onFocusCvv={onFocusCvv}
         onChangeName={onChangeName}
         onChangeExpirationMonth={onChangeExpirationMonth}
+        onChangeExpirationYear={onChangeExpirationYear}
         onSubmit={onSubmit}
       />
     </div>
