@@ -47,9 +47,10 @@ const FormContainer = () => {
 
   const createChunks = str => {
     const chunks = str.match(/.{1,4}/g);
-    const totalChunks = chunks.reduce((acc, item) => {
-      return acc.concat(`${item} `);
-    }, '');
+    const totalChunks = chunks.reduce(
+      (acc, item) => acc.concat(`${item} `),
+      ''
+    );
     return totalChunks.slice(0, totalChunks.length - 1);
   };
 
