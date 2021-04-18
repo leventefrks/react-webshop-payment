@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Select from './Select';
 import { CARD_MIN_EXPIRATION_YEAR } from './../constants';
+import CustomSelect from './CustomSelect';
 
 const Form = ({
   cardNumber,
@@ -11,6 +12,7 @@ const Form = ({
   onSubmit,
   onChangeExpirationMonth,
   onChangeExpirationYear,
+  expirationYear,
 }) => {
   return (
     <form
@@ -65,11 +67,12 @@ const Form = ({
           />
         </div>
         <div className="flex-1">
-          <Select
+          <CustomSelect
             name="expiration-year"
             defaultValue={CARD_MIN_EXPIRATION_YEAR}
             length={6}
-            isLeading={false}
+            isLeading={true}
+            value={expirationYear}
             onChange={onChangeExpirationYear}
           />
         </div>
@@ -90,15 +93,14 @@ const Form = ({
           />
         </div>
       </div>
-      <button type="submit" className="btn">
-        save card details
-      </button>
+      {/* <button className="btn">save card details</button> */}
     </form>
   );
 };
 
 Form.propTypes = {
   cardNumber: PropTypes.string,
+  expirationYear: PropTypes.string,
   onChangeCardNumber: PropTypes.func,
   onChangeExpirationMonth: PropTypes.func,
   onChangeExpirationYear: PropTypes.func,

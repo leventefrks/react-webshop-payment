@@ -5,7 +5,7 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    display: ['responsive', 'dropdown'],
   },
-  plugins: [],
+  plugins: [require('tailwindcss-dropdown')],
 };

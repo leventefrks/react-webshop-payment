@@ -54,6 +54,8 @@ const FormContainer = () => {
     return totalChunks.slice(0, totalChunks.length - 1);
   };
 
+  const onChangeExpirationYear = e => setExpirationYear(e.target.innerHTML);
+
   const onSubmit = e => {
     e.preventDefault();
     console.log('submit');
@@ -76,7 +78,8 @@ const FormContainer = () => {
         onFocusCvv={() => setCardFlipped(!isCardFlipped)}
         onChangeName={e => setName(e.target.value)}
         onChangeExpirationMonth={e => setExpirationMonth(e.target.value)}
-        onChangeExpirationYear={e => setExpirationYear(e.target.value)}
+        onChangeExpirationYear={onChangeExpirationYear}
+        expirationYear={expirationYear}
         onSubmit={onSubmit}
       />
     </div>
