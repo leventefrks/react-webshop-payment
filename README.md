@@ -2,6 +2,7 @@
 
 - React
 - [TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
+- [TailwindCSS Dropdown](https://github.com/estevanmaito/tailwindcss-dropdown)
 - [CreditCards](https://github.com/bendrucker/creditcards)
 - [PostCSS](https://github.com/postcss/postcss)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)
