@@ -14,7 +14,7 @@ const CustomSelect = ({
 
   return (
     <button
-      className={`relative form-input h-full ${isOpen && 'dropdown:block'}`}
+      className={`relative form-input h-11 ${isOpen && 'dropdown:block'}`}
       role="navigation"
       aria-haspopup="true"
       onClick={() => setVisibility(!isOpen)}

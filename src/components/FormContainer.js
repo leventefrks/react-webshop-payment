@@ -18,9 +18,7 @@ const FormContainer = () => {
   const [expirationMonth, setExpirationMonth] = useState(
     CARD_PLACEHOLDER_EXPIRATION_MONTH
   );
-  const [expirationYear, setExpirationYear] = useState(
-    CARD_PLACEHOLDER_EXPIRATION_YEAR
-  );
+  const [expirationYear, setExpirationYear] = useState();
   const [cvv, setCvv] = useState(CARD_PLACEHOLDER_CVV);
   const [isCardFlipped, setCardFlipped] = useState(false);
   const [cardType, setCardType] = useState(CREDIT_CARD_TYPE_VISA);
