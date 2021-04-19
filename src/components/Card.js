@@ -17,9 +17,6 @@ const Card = ({
   expirationYear,
   cvv,
 }) => {
-  const expirationDate = expirationMonth
-    ? `${expirationMonth.toString().padStart(2, '0')}/${expirationYear}`
-    : `${CARD_PLACEHOLDER_EXPIRATION_MONTH}/${CARD_PLACEHOLDER_EXPIRATION_YEAR}`;
   return (
     <div className="card-container w-80 md:w-96 h-56 -mt-20 md:-mt-28 relative text-white duration-300 transform :hover:scale-105 md:hover:scale-110">
       <div
@@ -53,11 +50,17 @@ const Card = ({
             </div>
             <div className="self-end">
               <label htmlFor="expiry" className="credit-card-label">
-                Expiry
+                Valid Thru
               </label>
-              <div name="expiry" id="expiry" className="credit-card-input">
-                {expirationDate}
-              </div>
+              <div name="expiry" id="expiry" className="credit-card-input">{`${
+                expirationMonth
+                  ? expirationMonth
+                  : CARD_PLACEHOLDER_EXPIRATION_MONTH
+              }/${
+                expirationYear
+                  ? expirationYear
+                  : CARD_PLACEHOLDER_EXPIRATION_YEAR
+              }`}</div>
             </div>
           </div>
         </div>
