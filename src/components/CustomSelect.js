@@ -30,7 +30,7 @@ const CustomSelect = ({
       >
         {[...Array(length).keys()].map((item, key) => (
           <li
-            className="hover:bg-gray-100 rounded"
+            className="hover:bg-indigo-100 rounded"
             key={key}
             onClick={onChange}
             value={
