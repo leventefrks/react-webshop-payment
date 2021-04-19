@@ -58,7 +58,7 @@ const Card = ({
                   : CARD_PLACEHOLDER_EXPIRATION_MONTH
               }/${
                 expirationYear
-                  ? expirationYear
+                  ? expirationYear.slice(2, 4)
                   : CARD_PLACEHOLDER_EXPIRATION_YEAR
               }`}</div>
             </div>

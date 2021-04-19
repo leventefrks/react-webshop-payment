@@ -1,7 +1,7 @@
 // placeholder values
 export const CARD_PLACEHOLDER_NAME = 'JOHN DOE';
 export const CARD_PLACEHOLDER_EXPIRATION_MONTH = 'MM';
-export const CARD_PLACEHOLDER_EXPIRATION_YEAR = 'YYYY';
+export const CARD_PLACEHOLDER_EXPIRATION_YEAR = 'YY';
 
 export const CARD_PLACEHOLDER_NUMBER = '**** **** **** ****';
 export const CARD_PLACEHOLDER_CVV = 123;
