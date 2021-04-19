@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
 
 const CustomSelect = ({
   name,
@@ -22,26 +23,14 @@ const CustomSelect = ({
       onClick={() => setVisibility(!isOpen)}
     >
       {value}
-      <svg
-        className="w-5 h-5 absolute right-2 fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-          clip-rule="evenodd"
-        />
-      </svg>
+      <FaChevronDown className="absolute w-3 h-3 right-2 fill-current" />
       <ul
-        className="absolute hidden left-0 w-full bg-white rounded-md shadow-xl py-2 space-y-2"
+        className="absolute hidden top-0 left-0 w-full bg-white rounded-md shadow-xl py-1 px-2 space-y-1 border"
         aria-label="submenu"
       >
         {[...Array(length).keys()].map((item, key) => (
           <li
-            className="hover:bg-gray-100 py-1"
+            className="hover:bg-gray-100 rounded"
             key={key}
             onClick={onChange}
             value={
@@ -57,7 +46,7 @@ const CustomSelect = ({
 };
 
 CustomSelect.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.number,
   onChange: PropTypes.func,
   isLeading: PropTypes.bool,
 };

@@ -75,7 +75,7 @@ Card.propTypes = {
   cardHolderName: PropTypes.string,
   cardPlaceholder: PropTypes.string,
   expirationDate: PropTypes.string,
-  cvv: PropTypes.string,
+  cvv: PropTypes.number,
 };
 
 export default Card;

@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
-import Select from './Select';
-import { CARD_MIN_EXPIRATION_YEAR } from './../constants';
+import {
+  CARD_MIN_EXPIRATION_YEAR,
+  CARD_MIN_EXPIRATION_MONTH,
+} from './../constants';
 import CustomSelect from './CustomSelect';
 
 const Form = ({
   cardNumber,
+  expirationYear,
+  expirationMonth,
   onChangeCardNumber,
   onChangeCvv,
   onFocusCvv,
@@ -12,7 +16,6 @@ const Form = ({
   onSubmit,
   onChangeExpirationMonth,
   onChangeExpirationYear,
-  expirationYear,
 }) => {
   return (
     <form
@@ -58,11 +61,12 @@ const Form = ({
           >
             expiration date
           </label>
-          <Select
+          <CustomSelect
             name="expiration-month"
-            defaultValue={1}
+            defaultValue={CARD_MIN_EXPIRATION_MONTH}
             length={12}
             isLeading={true}
+            value={expirationMonth}
             onChange={onChangeExpirationMonth}
           />
         </div>
@@ -71,7 +75,7 @@ const Form = ({
             name="expiration-year"
             defaultValue={CARD_MIN_EXPIRATION_YEAR}
             length={6}
-            isLeading={true}
+            isLeading={false}
             value={expirationYear}
             onChange={onChangeExpirationYear}
           />
@@ -100,7 +104,8 @@ const Form = ({
 
 Form.propTypes = {
   cardNumber: PropTypes.string,
-  expirationYear: PropTypes.string,
+  expirationMonth: PropTypes.string,
+  expirationYear: PropTypes.number,
   onChangeCardNumber: PropTypes.func,
   onChangeExpirationMonth: PropTypes.func,
   onChangeExpirationYear: PropTypes.func,
