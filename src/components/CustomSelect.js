@@ -16,16 +16,16 @@ const CustomSelect = ({
   return (
     <button
       className={`relative flex items-center h-11 form-input ${
-        isOpen && 'dropdown:block'
+        isOpen ? 'dropdown:block' : ''
       }`}
       role="navigation"
       aria-haspopup="true"
-      onClick={() => setVisibility(!isOpen)}
+      onClick={() => setVisibility(() => !isOpen)}
     >
       {value}
       <FaChevronDown className="absolute w-3 h-3 right-2 fill-current" />
       <ul
-        className="absolute z-10 hidden -top-44 left-0 w-full bg-white rounded-md shadow-xl py-1 px-2 space-y-1 border"
+        className="absolute z-20 top-0 right-0 hidden w-full bg-white rounded-md shadow-xl py-1 px-2 space-y-1 border"
         aria-label="submenu"
       >
         {[...Array(length).keys()].map((item, key) => (
@@ -33,9 +33,6 @@ const CustomSelect = ({
             className="hover:bg-indigo-100 rounded"
             key={key}
             onClick={() => onChange}
-            value={
-              isLeading ? leadingZero(defaultValue + key) : defaultValue + key
-            }
           >
             {isLeading ? leadingZero(defaultValue + key) : defaultValue + key}
           </li>

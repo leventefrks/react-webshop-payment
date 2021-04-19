@@ -104,7 +104,7 @@ const Form = ({
 
 Form.propTypes = {
   cardNumber: PropTypes.string,
-  expirationMonth: PropTypes.string,
+  expirationMonth: PropTypes.number,
   expirationYear: PropTypes.number,
   onChangeCardNumber: PropTypes.func,
   onChangeExpirationMonth: PropTypes.func,

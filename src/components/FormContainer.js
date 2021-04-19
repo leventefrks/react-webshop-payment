@@ -3,8 +3,6 @@ import { card } from 'creditcards';
 import {
   CARD_PLACEHOLDER_NAME,
   CARD_PLACEHOLDER_NUMBER,
-  CARD_PLACEHOLDER_EXPIRATION_MONTH,
-  CARD_PLACEHOLDER_EXPIRATION_YEAR,
   CARD_PLACEHOLDER_CVV,
   CREDIT_CARD_TYPE_VISA,
 } from '../constants';
@@ -15,12 +13,8 @@ const FormContainer = () => {
   const [cardHolderName, setName] = useState(CARD_PLACEHOLDER_NAME);
   const [cardNumber, setCardNumber] = useState('');
   const [cardPlaceholder, setPlaceholder] = useState(CARD_PLACEHOLDER_NUMBER);
-  const [expirationMonth, setExpirationMonth] = useState(
-    CARD_PLACEHOLDER_EXPIRATION_MONTH
-  );
-  const [expirationYear, setExpirationYear] = useState(
-    CARD_PLACEHOLDER_EXPIRATION_YEAR
-  );
+  const [expirationMonth, setExpirationMonth] = useState(1);
+  const [expirationYear, setExpirationYear] = useState(2021);
   const [cvv, setCvv] = useState(CARD_PLACEHOLDER_CVV);
   const [isCardFlipped, setCardFlipped] = useState(false);
   const [cardType, setCardType] = useState(CREDIT_CARD_TYPE_VISA);
