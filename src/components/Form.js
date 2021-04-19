@@ -3,7 +3,7 @@ import {
   CARD_MIN_EXPIRATION_YEAR,
   CARD_MIN_EXPIRATION_MONTH,
 } from './../constants';
-import CustomSelect from './CustomSelect';
+import Select from './Select';
 
 const Form = ({
   cardNumber,
@@ -61,7 +61,7 @@ const Form = ({
           >
             expiration date
           </label>
-          <CustomSelect
+          <Select
             name="expiration-month"
             defaultValue={CARD_MIN_EXPIRATION_MONTH}
             length={12}
@@ -71,7 +71,7 @@ const Form = ({
           />
         </div>
         <div className="flex-1">
-          <CustomSelect
+          <Select
             name="expiration-year"
             defaultValue={CARD_MIN_EXPIRATION_YEAR}
             length={6}
@@ -104,8 +104,8 @@ const Form = ({
 
 Form.propTypes = {
   cardNumber: PropTypes.string,
-  expirationMonth: PropTypes.number,
-  expirationYear: PropTypes.number,
+  expirationMonth: PropTypes.string,
+  expirationYear: PropTypes.string,
   onChangeCardNumber: PropTypes.func,
   onChangeExpirationMonth: PropTypes.func,
   onChangeExpirationYear: PropTypes.func,

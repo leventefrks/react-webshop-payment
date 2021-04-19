@@ -13,8 +13,8 @@ const FormContainer = () => {
   const [cardHolderName, setName] = useState(CARD_PLACEHOLDER_NAME);
   const [cardNumber, setCardNumber] = useState('');
   const [cardPlaceholder, setPlaceholder] = useState(CARD_PLACEHOLDER_NUMBER);
-  const [expirationMonth, setExpirationMonth] = useState(1);
-  const [expirationYear, setExpirationYear] = useState(2021);
+  const [expirationMonth, setExpirationMonth] = useState('');
+  const [expirationYear, setExpirationYear] = useState('');
   const [cvv, setCvv] = useState(CARD_PLACEHOLDER_CVV);
   const [isCardFlipped, setCardFlipped] = useState(false);
   const [cardType, setCardType] = useState(CREDIT_CARD_TYPE_VISA);
@@ -26,8 +26,6 @@ const FormContainer = () => {
     setPlaceholder(() => setCardMask(creditCard));
     setCardType(() => card.type(creditCard));
   };
-
-  const expirationDate = `${expirationMonth}/${expirationYear}`;
 
   const setCardMask = creditCard => {
     const mask = '****************';
@@ -48,8 +46,7 @@ const FormContainer = () => {
     return totalChunks.slice(0, totalChunks.length - 1);
   };
 
-  const onChangeExpirationYear = e =>
-    setExpirationYear(Number(e.target.innerHTML));
+  const onChangeExpirationYear = e => setExpirationYear(e.target.innerHTML);
 
   const onChangeExpirationMonth = e => setExpirationMonth(e.target.innerHTML);
 
@@ -65,7 +62,8 @@ const FormContainer = () => {
         isCardFlipped={isCardFlipped}
         cardHolderName={cardHolderName}
         cardPlaceholder={cardPlaceholder}
-        expirationDate={expirationDate}
+        expirationMonth={expirationMonth}
+        expirationYear={expirationYear}
         cvv={cvv}
       />
       <Form

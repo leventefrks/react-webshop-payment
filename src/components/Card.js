@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 import { SiContactlesspayment } from 'react-icons/si';
-import { CARD_PLACEHOLDER_CVV, CARD_PLACEHOLDER_NAME } from '../constants';
+import {
+  CARD_PLACEHOLDER_CVV,
+  CARD_PLACEHOLDER_NAME,
+  CARD_PLACEHOLDER_EXPIRATION_YEAR,
+  CARD_PLACEHOLDER_EXPIRATION_MONTH,
+} from '../constants';
 import CardLogo from './CardLogo';
 
 const Card = ({
@@ -8,9 +13,13 @@ const Card = ({
   isCardFlipped,
   cardHolderName,
   cardPlaceholder,
-  expirationDate,
+  expirationMonth,
+  expirationYear,
   cvv,
 }) => {
+  const expirationDate = expirationMonth
+    ? `${expirationMonth.toString().padStart(2, '0')}/${expirationYear}`
+    : `${CARD_PLACEHOLDER_EXPIRATION_MONTH}/${CARD_PLACEHOLDER_EXPIRATION_YEAR}`;
   return (
     <div className="card-container w-80 md:w-96 h-56 -mt-20 md:-mt-28 relative text-white duration-300 transform :hover:scale-105 md:hover:scale-110">
       <div
@@ -74,7 +83,8 @@ Card.propTypes = {
   cardType: PropTypes.string,
   cardHolderName: PropTypes.string,
   cardPlaceholder: PropTypes.string,
-  expirationDate: PropTypes.string,
+  expirationMonth: PropTypes.string,
+  expirationYear: PropTypes.string,
   cvv: PropTypes.number,
 };
 
