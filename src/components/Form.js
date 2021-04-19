@@ -19,7 +19,7 @@ const Form = ({
 }) => {
   return (
     <form
-      className="w-full bg-white p-3 md:p-6 space-y-3 rounded-bl-xl rounded-br-xl"
+      className="w-full bg-white p-2 md:p-6 space-y-3 rounded-bl-xl rounded-br-xl"
       onSubmit={onSubmit}
     >
       <div>
@@ -97,7 +97,7 @@ const Form = ({
           />
         </div>
       </div>
-      {/* <button className="btn">save card details</button> */}
+      <button className="btn">save card details</button>
     </form>
   );
 };

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { PropTypes } from 'prop-types';
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
@@ -15,7 +15,7 @@ const CustomSelect = ({
 
   return (
     <button
-      className={`relative flex items-center form-input h-11 ${
+      className={`relative flex items-center h-11 form-input ${
         isOpen && 'dropdown:block'
       }`}
       role="navigation"
@@ -25,14 +25,14 @@ const CustomSelect = ({
       {value}
       <FaChevronDown className="absolute w-3 h-3 right-2 fill-current" />
       <ul
-        className="absolute hidden top-10 left-0 w-full bg-white rounded-md shadow-xl py-1 px-2 space-y-1 border"
+        className="absolute z-10 hidden -top-44 left-0 w-full bg-white rounded-md shadow-xl py-1 px-2 space-y-1 border"
         aria-label="submenu"
       >
         {[...Array(length).keys()].map((item, key) => (
           <li
             className="hover:bg-indigo-100 rounded"
             key={key}
-            onClick={onChange}
+            onClick={() => onChange}
             value={
               isLeading ? leadingZero(defaultValue + key) : defaultValue + key
             }

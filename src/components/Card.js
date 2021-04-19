@@ -12,13 +12,13 @@ const Card = ({
   cvv,
 }) => {
   return (
-    <div className="card-container w-80 md:w-96 h-56 -mt-28 relative text-white duration-300 transform :hover:scale-105 md:hover:scale-110">
+    <div className="card-container w-80 md:w-96 h-56 -mt-20 md:-mt-28 relative text-white duration-300 transform :hover:scale-105 md:hover:scale-110">
       <div
         className={`card absolute w-full h-56 transition duration-700 ease-out
           ${isCardFlipped && 'is-flipped'} `}
       >
         <div className="absolute front w-full h-56 rounded-xl bg-gradient-to-r from-indigo-500 to-pink-700 shadow-2xl">
-          <div className="w-full h-full flex flex-col justify-between p-6">
+          <div className="w-full h-full flex flex-col justify-between p-3 md:p-6">
             <CardLogo type={cardType} />
             <div className="flex justify-between">
               <div>
