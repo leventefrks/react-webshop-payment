@@ -25,7 +25,7 @@ const CustomSelect = ({
       {value}
       <FaChevronDown className="absolute w-3 h-3 right-2 fill-current" />
       <ul
-        className="absolute hidden top-0 left-0 w-full bg-white rounded-md shadow-xl py-1 px-2 space-y-1 border"
+        className="absolute hidden top-10 left-0 w-full bg-white rounded-md shadow-xl py-1 px-2 space-y-1 border"
         aria-label="submenu"
       >
         {[...Array(length).keys()].map((item, key) => (
