@@ -18,7 +18,7 @@ const Card = ({
   cvv,
 }) => {
   return (
-    <div className="w-80 md:w-96 h-56 -mt-6 mb-5 md:mb-0 md:-mt-28 relative text-white duration-300 transform :hover:scale-105 md:hover:scale-110 hover:rotate-3 perspective backface-visibility-hidden">
+    <div className="w-80 md:w-96 h-56 -mt-6 mb-5 md:mb-0 md:-mt-28 relative text-white duration-300 transform :hover:scale-105 md:hover:scale-110 perspective backface-visibility-hidden">
       <div
         className={`absolute w-full h-56 transform-style-preserve transition duration-700 ease-out
           ${isCardFlipped && 'rotate-y-180'} `}

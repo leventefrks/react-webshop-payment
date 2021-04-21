@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  .rotate-y-3 {
-    transform: rotateY(3deg);
-  }
-
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
