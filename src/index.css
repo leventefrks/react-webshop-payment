@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .rotate-y-3 {
+    transform: rotateY(3deg);
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .backface-visibility-hidden {
+    backface-visibility: hidden;
+  }
+
+  .transform-style-preserve {
+    transform-style: preserve-3d;
+  }
+}
+
 .form-label {
   @apply text-sm text-gray-600;
 }
@@ -16,33 +38,6 @@
 
 .credit-card-input {
   @apply font-bold md:text-xl font-mono text-gray-700;
-}
-
-.card-container {
-  perspective: 2000px;
-  backface-visibility: hidden;
-}
-
-.card {
-  transform-style: preserve-3d;
-}
-
-.front,
-.back {
-  backface-visibility: hidden;
-}
-
-.front img {
-  backface-visibility: hidden;
-}
-
-.back {
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-}
-
-.is-flipped {
-  transform: rotateY(180deg);
 }
 
 .btn {

@@ -18,12 +18,12 @@ const Card = ({
   cvv,
 }) => {
   return (
-    <div className="card-container w-80 md:w-96 h-56 -mt-6 mb-5 md:mb-0 md:-mt-28 relative text-white duration-300 transform :hover:scale-105 md:hover:scale-110">
+    <div className="w-80 md:w-96 h-56 -mt-6 mb-5 md:mb-0 md:-mt-28 relative text-white duration-300 transform :hover:scale-105 md:hover:scale-110 hover:rotate-3 perspective backface-visibility-hidden">
       <div
-        className={`card absolute w-full h-56 transition duration-700 ease-out
-          ${isCardFlipped && 'is-flipped'} `}
+        className={`absolute w-full h-56 transform-style-preserve transition duration-700 ease-out
+          ${isCardFlipped && 'rotate-y-180'} `}
       >
-        <div className="absolute front w-full h-56 rounded-xl bg-gradient-to-r from-indigo-500 to-pink-700 shadow-2xl">
+        <div className="absolute w-full h-56 rounded-xl backface-visibility-hidden bg-gradient-to-r from-indigo-500 to-pink-700 shadow-2xl">
           <div className="w-full h-full flex flex-col justify-between p-3 md:p-6">
             <CardLogo type={cardType} />
             <div className="flex justify-between">
@@ -64,7 +64,7 @@ const Card = ({
             </div>
           </div>
         </div>
-        <div className="absolute back w-full h-56 items-end flex rounded-xl shadow-md bg-gradient-to-r from-pink-500 to-indigo-700">
+        <div className="absolute w-full h-56 items-end flex rounded-xl shadow-md backface-visibility-hidden rotate-y-180  bg-gradient-to-r from-pink-500 to-indigo-700">
           <div className="absolute top-14 w-full bg-gray-700 h-8"></div>
           <div className="w-full p-8">
             <div>
