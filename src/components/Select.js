@@ -18,7 +18,7 @@ const Select = ({ name, onChange, length, defaultValue, value, isLeading }) => {
       {value}
       <FaChevronDown className="absolute w-3 h-3 right-2 fill-current" />
       <ul
-        className="absolute z-20 w-full hidden transform top-0 right-0 translate-x-0 -translate-y-full bg-white rounded-md shadow-xl py-1 px-2 space-y-1 border"
+        className="absolute z-20 w-full hidden transform -top-1 right-0 translate-x-0 -translate-y-full bg-white rounded-md py-1 px-2 space-y-1 border"
         aria-label="submenu"
       >
         {[...Array(length).keys()].map((item, key) => (
@@ -26,9 +26,6 @@ const Select = ({ name, onChange, length, defaultValue, value, isLeading }) => {
             className="hover:bg-indigo-100 rounded"
             key={key}
             onClick={onChange}
-            value={
-              isLeading ? leadingZero(defaultValue + key) : defaultValue + key
-            }
           >
             {isLeading ? leadingZero(defaultValue + key) : defaultValue + key}
           </li>
