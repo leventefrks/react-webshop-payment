@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { card } from 'creditcards';
+import { card, cvc } from 'creditcards';
 import {
   CARD_PLACEHOLDER_NAME,
   CARD_PLACEHOLDER_NUMBER,
-  CARD_PLACEHOLDER_CVV,
   CREDIT_CARD_TYPE_VISA,
 } from '../constants';
 import Card from './Card';
@@ -15,9 +14,11 @@ const FormContainer = () => {
   const [cardPlaceholder, setPlaceholder] = useState(CARD_PLACEHOLDER_NUMBER);
   const [expirationMonth, setExpirationMonth] = useState('');
   const [expirationYear, setExpirationYear] = useState('');
-  const [cvv, setCvv] = useState(CARD_PLACEHOLDER_CVV);
+  const [cvv, setCvv] = useState('');
+  const [cvvMask, setCvvMask] = useState('');
   const [isCardFlipped, setCardFlipped] = useState(false);
   const [cardType, setCardType] = useState(CREDIT_CARD_TYPE_VISA);
+  const [isCvvValid, setCvvValidity] = useState(false);
 
   const onChangeCardNumber = e => {
     const creditCard = card.parse(e.target.value);
@@ -52,7 +53,16 @@ const FormContainer = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log('submit');
+  };
+
+  const onChangeCvv = str => {
+    setCvvValidity(cvc.isValid(str));
+    setCvv(str);
+    const cvv = String(str);
+
+    setCvvMask(
+      cvv.length === 3 ? `**${cvv.slice(-1)}` : cvv.replace(/[0-9]/g, '*')
+    );
   };
 
   return (
@@ -64,12 +74,13 @@ const FormContainer = () => {
         cardPlaceholder={cardPlaceholder}
         expirationMonth={expirationMonth}
         expirationYear={expirationYear}
-        cvv={cvv}
+        cvv={cvvMask}
+        isCvvValid={isCvvValid}
       />
       <Form
         cardNumber={cardNumber}
         onChangeCardNumber={onChangeCardNumber}
-        onChangeCvv={e => setCvv(Number(e.target.value))}
+        onChangeCvv={e => onChangeCvv(e.target.value)}
         onFocusCvv={() => setCardFlipped(!isCardFlipped)}
         onChangeName={e => setName(e.target.value)}
         onChangeExpirationMonth={onChangeExpirationMonth}

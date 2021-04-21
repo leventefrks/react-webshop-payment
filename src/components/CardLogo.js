@@ -3,7 +3,7 @@ import { CREDIT_CARD_TYPES, CREDIT_CARD_TYPE_VISA } from './../constants';
 
 const CardLogo = ({ type }) => {
   const getCardType =
-    CREDIT_CARD_TYPES.get(type) || CREDIT_CARD_TYPE_VISA.toLowerCase();
+    CREDIT_CARD_TYPES.get(type) ?? CREDIT_CARD_TYPE_VISA.toLowerCase();
 
   return (
     <img

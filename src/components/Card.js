@@ -16,9 +16,10 @@ const Card = ({
   expirationMonth,
   expirationYear,
   cvv,
+  isCvvValid,
 }) => {
   return (
-    <div className="w-80 md:w-96 h-56 -mt-6 mb-5 md:mb-0 md:-mt-28 relative text-white duration-300 transform :hover:scale-105 md:hover:scale-110 perspective backface-visibility-hidden">
+    <div className="w-80 md:w-96 h-56 -mt-6 mb-5 md:mb-0 md:-mt-28 relative text-white duration-300 transform hover:scale-105 md:hover:scale-110 hover:rotate-y-3 perspective backface-visibility-hidden">
       <div
         className={`absolute w-full h-56 transform-style-preserve transition duration-700 ease-out
           ${isCardFlipped && 'rotate-y-180'} `}
@@ -68,7 +69,9 @@ const Card = ({
           <div className="absolute top-14 w-full bg-gray-700 h-8"></div>
           <div className="w-full p-8">
             <div>
-              <label className="credit-card-label uppercase">cvv</label>
+              <label className="flex credit-card-label uppercase">
+                {cvv && cvv.length === 3 && !isCvvValid ? 'invalid cvv' : 'cvv'}
+              </label>
               <div className="credit-card-input">
                 {cvv || CARD_PLACEHOLDER_CVV}
               </div>
@@ -88,7 +91,8 @@ Card.propTypes = {
   cardPlaceholder: PropTypes.string,
   expirationMonth: PropTypes.string,
   expirationYear: PropTypes.string,
-  cvv: PropTypes.number,
+  cvv: PropTypes.string,
+  isCvvValid: PropTypes.bool,
 };
 
 export default Card;
