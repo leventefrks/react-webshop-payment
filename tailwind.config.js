@@ -4,8 +4,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  variants: {
-    display: ['responsive', 'focus', 'dropdown'],
-  },
-  plugins: [require('tailwindcss-dropdown')],
+  variants: {},
+  plugins: [],
 };
