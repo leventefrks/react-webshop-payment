@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import {
-  CARD_MIN_EXPIRATION_YEAR,
-  CARD_MIN_EXPIRATION_MONTH,
+  CREDIT_CAR_EXPIRATION_MONTH,
+  CREDIT_CAR_EXPIRATION_YEAR,
 } from './../constants';
-import Select from './Select';
+import CustomSelect from './CustomSelect';
 
 const Form = ({
   cardNumber,
@@ -54,30 +54,24 @@ const Form = ({
         />
       </div>
       <div className="flex flex-col md:flex-row md:space-x-4 md:items-end space-y-4 md:space-y-0">
-        <div className="flex-1">
+        <div className="flex-1 relative">
           <label
             htmlFor="expiration-date"
             className="form-label capitalize select-none"
           >
             expiration date
           </label>
-          <Select
-            name="expiration-month"
-            defaultValue={CARD_MIN_EXPIRATION_MONTH}
-            length={12}
-            isLeading={true}
+          <CustomSelect
             value={expirationMonth}
             onChange={onChangeExpirationMonth}
+            list={CREDIT_CAR_EXPIRATION_MONTH}
           />
         </div>
-        <div className="flex-1">
-          <Select
-            name="expiration-year"
-            defaultValue={CARD_MIN_EXPIRATION_YEAR}
-            length={6}
-            isLeading={false}
+        <div className="flex-1 relative">
+          <CustomSelect
             value={expirationYear}
             onChange={onChangeExpirationYear}
+            list={CREDIT_CAR_EXPIRATION_YEAR}
           />
         </div>
         <div className="flex-1">
@@ -105,7 +99,6 @@ const Form = ({
 Form.propTypes = {
   cardNumber: PropTypes.string,
   expirationMonth: PropTypes.string,
-  expirationYear: PropTypes.string,
   onChangeCardNumber: PropTypes.func,
   onChangeExpirationMonth: PropTypes.func,
   onChangeExpirationYear: PropTypes.func,

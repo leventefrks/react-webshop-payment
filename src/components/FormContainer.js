@@ -4,6 +4,7 @@ import {
   CARD_PLACEHOLDER_NAME,
   CARD_PLACEHOLDER_NUMBER,
   CREDIT_CARD_TYPE_VISA,
+  CREDIT_CAR_EXPIRATION_YEAR,
 } from '../constants';
 import Card from './Card';
 import Form from './Form';
@@ -47,13 +48,11 @@ const FormContainer = () => {
     return totalChunks.slice(0, totalChunks.length - 1);
   };
 
-  const onChangeExpirationYear = e => setExpirationYear(e.target.innerHTML);
+  const onChangeExpirationYear = value => setExpirationYear(value);
 
-  const onChangeExpirationMonth = e => setExpirationMonth(e.target.innerHTML);
+  const onChangeExpirationMonth = value => setExpirationMonth(value);
 
-  const onSubmit = e => {
-    e.preventDefault();
-  };
+  const onSubmit = e => e.preventDefault();
 
   const onChangeCvv = str => {
     setCvvValidity(cvc.isValid(str));
@@ -73,7 +72,6 @@ const FormContainer = () => {
         cardHolderName={cardHolderName}
         cardPlaceholder={cardPlaceholder}
         expirationMonth={expirationMonth}
-        expirationYear={expirationYear}
         cvv={cvvMask}
         isCvvValid={isCvvValid}
       />

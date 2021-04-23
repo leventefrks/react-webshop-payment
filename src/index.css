@@ -41,5 +41,5 @@
 }
 
 .btn {
-  @apply w-full p-2 md:p-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md focus:bg-indigo-600 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 capitalize;
+  @apply w-full p-2 md:p-3 text-white bg-indigo-500 hover:bg-indigo-600 rounded-md focus:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 capitalize;
 }

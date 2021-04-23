@@ -24,7 +24,7 @@ const Card = ({
         className={`absolute w-full h-56 transform-style-preserve transition duration-700 ease-out
           ${isCardFlipped && 'rotate-y-180'} `}
       >
-        <div className="absolute w-full h-56 rounded-xl backface-visibility-hidden bg-gradient-to-r from-indigo-500 to-pink-700 shadow-2xl">
+        <div className="absolute w-full h-56 rounded-xl backface-visibility-hidden bg-gradient-to-r from-indigo-600 to-pink-500 shadow-2xl">
           <div className="w-full h-full flex flex-col justify-between p-3 md:p-6">
             <CardLogo type={cardType} />
             <div className="flex justify-between">
@@ -89,8 +89,6 @@ Card.propTypes = {
   cardType: PropTypes.string,
   cardHolderName: PropTypes.string,
   cardPlaceholder: PropTypes.string,
-  expirationMonth: PropTypes.string,
-  expirationYear: PropTypes.string,
   cvv: PropTypes.string,
   isCvvValid: PropTypes.bool,
 };
