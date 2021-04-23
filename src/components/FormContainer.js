@@ -72,6 +72,7 @@ const FormContainer = () => {
         cardHolderName={cardHolderName}
         cardPlaceholder={cardPlaceholder}
         expirationMonth={expirationMonth}
+        expirationYear={expirationYear}
         cvv={cvvMask}
         isCvvValid={isCvvValid}
       />

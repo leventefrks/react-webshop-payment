@@ -16,7 +16,7 @@ const CustomSelect = ({ value, list, onChange }) => {
           <Transition
             show={open}
             as={Fragment}
-            leave="transition ease-in duration-100"
+            leave="transition ease-in duration-300"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
