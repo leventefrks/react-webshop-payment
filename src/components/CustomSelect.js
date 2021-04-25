@@ -34,7 +34,7 @@ const CustomSelect = ({ value, list, onChange }) => {
                   key={item}
                   className={({ active }) =>
                     `${
-                      active ? 'text-amber-900 bg-indigo-100' : 'text-gray-900'
+                      active ? 'text-amber-900 bg-indigo-100' : 'text-gray-600'
                     }
                  cursor-pointer select-none relative py-2 pl-10 pr-4 hover:bg-indigo-100 rounded-md`
                   }
