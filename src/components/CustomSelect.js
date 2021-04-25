@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
-import { HiSelector } from 'react-icons/hi';
+import { FaChevronDown } from 'react-icons/fa';
 import { FaCheck } from 'react-icons/fa';
 
 const CustomSelect = ({ value, list, onChange }) => {
@@ -9,9 +9,14 @@ const CustomSelect = ({ value, list, onChange }) => {
     <Listbox value={value} onChange={onChange}>
       {({ open }) => (
         <>
-          <Listbox.Button className="relative form-input flex justify-between">
+          <Listbox.Button className="form-input flex justify-between">
             <span className="truncate">{value}</span>
-            <HiSelector className="w-5 h-5 text-gray-400" aria-hidden="true" />
+            <FaChevronDown
+              className={`w-3 h-3 self-center text-gray-400 duration-200 transform  ${
+                open && 'rotate-180'
+              } `}
+              aria-hidden="true"
+            />
           </Listbox.Button>
           <Transition
             show={open}
@@ -66,6 +71,7 @@ const CustomSelect = ({ value, list, onChange }) => {
 
 CustomSelect.propTypes = {
   onChange: PropTypes.func,
+  list: PropTypes.array,
   value: PropTypes.string,
 };
 

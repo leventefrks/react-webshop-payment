@@ -4,7 +4,6 @@ import {
   CARD_PLACEHOLDER_NAME,
   CARD_PLACEHOLDER_NUMBER,
   CREDIT_CARD_TYPE_VISA,
-  CREDIT_CAR_EXPIRATION_YEAR,
 } from '../constants';
 import Card from './Card';
 import Form from './Form';

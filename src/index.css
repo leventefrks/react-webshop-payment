@@ -29,7 +29,7 @@
 }
 
 .form-input {
-  @apply w-full p-2 md:px-3 md:py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300;
+  @apply relative h-10 w-full p-2 md:px-3 md:py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300;
 }
 
 .credit-card-label {
