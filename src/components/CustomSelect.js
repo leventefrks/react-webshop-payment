@@ -27,7 +27,7 @@ const CustomSelect = ({ value, list, onChange }) => {
           >
             <Listbox.Options
               static
-              className="absolute w-full translate-x-0 -translate-y-full text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+              className="absolute z-0 w-full h-40 overflow-y-scroll text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
             >
               {list.map(item => (
                 <Listbox.Option
