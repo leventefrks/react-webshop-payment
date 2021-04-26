@@ -73,6 +73,7 @@ const FormContainer = () => {
         expirationMonth={expirationMonth}
         expirationYear={expirationYear}
         cvv={cvvMask}
+        cvc={cvv}
         isCvvValid={isCvvValid}
       />
       <Form

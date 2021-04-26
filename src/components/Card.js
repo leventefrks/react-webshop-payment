@@ -16,6 +16,7 @@ const Card = ({
   expirationMonth,
   expirationYear,
   cvv,
+  cvc,
   isCvvValid,
 }) => {
   return (
@@ -90,6 +91,7 @@ Card.propTypes = {
   cardHolderName: PropTypes.string,
   cardPlaceholder: PropTypes.string,
   cvv: PropTypes.string,
+  cvc: PropTypes.string,
   isCvvValid: PropTypes.bool,
 };
 
