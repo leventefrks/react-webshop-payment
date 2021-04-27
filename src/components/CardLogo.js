@@ -10,7 +10,6 @@ const CardLogo = ({ type }) => {
       src={require(`./../assets/${getCardType}.svg`).default}
       alt={getCardType}
       className="absolute top-4 right-4 w-10 h-10 backface-visibility-hidden"
-      aria-role="credit card type logo"
     />
   );
 };
