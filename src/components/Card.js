@@ -33,7 +33,11 @@ const Card = ({
                 <label htmlFor="credit-card" className="credit-card-label">
                   Name
                 </label>
-                <div name="name" id="credit-card" className="credit-card-input">
+                <div
+                  name="credit-card"
+                  id="credit-card"
+                  className="credit-card-input"
+                >
                   {cardHolderName || CARD_PLACEHOLDER_NAME}
                 </div>
               </div>
