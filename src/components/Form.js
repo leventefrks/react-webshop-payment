@@ -64,6 +64,7 @@ const Form = ({
           <CustomSelect
             value={expirationMonth}
             onChange={onChangeExpirationMonth}
+            label="expiration-month"
             list={CREDIT_CAR_EXPIRATION_MONTH}
           />
         </div>
@@ -71,6 +72,7 @@ const Form = ({
           <CustomSelect
             value={expirationYear}
             onChange={onChangeExpirationYear}
+            label="expiration-year"
             list={CREDIT_CAR_EXPIRATION_YEAR}
           />
         </div>

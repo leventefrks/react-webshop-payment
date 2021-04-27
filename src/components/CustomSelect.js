@@ -4,12 +4,15 @@ import { Listbox, Transition } from '@headlessui/react';
 import { FaChevronDown } from 'react-icons/fa';
 import { FaCheck } from 'react-icons/fa';
 
-const CustomSelect = ({ value, list, onChange }) => {
+const CustomSelect = ({ value, list, onChange, label }) => {
   return (
     <Listbox value={value} onChange={onChange}>
       {({ open }) => (
         <>
-          <Listbox.Button className="form-input flex justify-between" as="div">
+          <Listbox.Button
+            className="form-input flex justify-between"
+            aria-label={label}
+          >
             <span className="truncate">{value}</span>
             <FaChevronDown
               className={`w-3 h-3 self-center text-gray-400 duration-200 transform  ${
@@ -71,6 +74,7 @@ const CustomSelect = ({ value, list, onChange }) => {
 
 CustomSelect.propTypes = {
   onChange: PropTypes.func,
+  label: PropTypes.string,
   list: PropTypes.array,
   value: PropTypes.string,
 };
