@@ -30,12 +30,15 @@ const Card = ({
             <CardLogo type={cardType} />
             <div className="flex justify-between">
               <div>
-                <label htmlFor="credit-card" className="credit-card-label">
+                <label
+                  htmlFor="credit-credit-card"
+                  className="credit-card-label"
+                >
                   Name
                 </label>
                 <div
-                  name="credit-card"
-                  id="credit-card"
+                  name="credit-credit-card"
+                  id="credit-credit-card"
                   className="credit-card-input"
                 >
                   {cardHolderName || CARD_PLACEHOLDER_NAME}
@@ -43,12 +46,12 @@ const Card = ({
               </div>
             </div>
             <div>
-              <label htmlFor="card-number" className="credit-card-label">
+              <label htmlFor="credit-card-number" className="credit-card-label">
                 Card Number
               </label>
               <div
-                name="card-number"
-                id="card-number"
+                name="credit-card-number"
+                id="credit-card-number"
                 className="credit-card-input"
               >
                 {cardPlaceholder}
