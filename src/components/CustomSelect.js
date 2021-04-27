@@ -9,7 +9,7 @@ const CustomSelect = ({ value, list, onChange }) => {
     <Listbox value={value} onChange={onChange}>
       {({ open }) => (
         <>
-          <Listbox.Button className="form-input flex justify-between">
+          <Listbox.Button className="form-input flex justify-between" as="div">
             <span className="truncate">{value}</span>
             <FaChevronDown
               className={`w-3 h-3 self-center text-gray-400 duration-200 transform  ${
