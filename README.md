@@ -1,4 +1,4 @@
-# [WIP] - React Credit Card Form Component
+React Credit Card Form Component
 
 - React
 - [TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
