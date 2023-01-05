@@ -9,4 +9,4 @@
 
 # Demo
 
-[Live Version](https://credit-card-transfer.netlify.app/)
+[Live Version](https://react-webshop-payment.netlify.app/)
